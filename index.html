@@ -705,9 +705,10 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 5px 14px;
+      padding: 6px 14px;
       border-radius: 100px;
       white-space: nowrap;
+      line-height: 1.2;
     }
 
     .bucket-label.available {
@@ -1747,6 +1748,21 @@
 
       .reg-bar {
         padding: 14px 24px;
+      }
+
+      .bucket-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .bucket-label {
+        white-space: normal;
+        padding: 8px 16px;
+      }
+
+      .bucket-hr {
+        display: none;
       }
     }
 
