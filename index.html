@@ -69,6 +69,7 @@
       --shadow-sm: 0 1px 3px rgba(0, 71, 171, 0.07), 0 1px 2px rgba(0, 71, 171, 0.04);
       --shadow: 0 4px 16px rgba(0, 71, 171, 0.10), 0 1px 4px rgba(0, 71, 171, 0.06);
       --shadow-lg: 0 12px 40px rgba(0, 71, 171, 0.13), 0 2px 8px rgba(0, 71, 171, 0.07);
+      --gradient: linear-gradient(135deg, #4FC4F1 0%, #253B80 100%);
       --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
       --headline: 'Hubot Sans', system-ui, sans-serif;
       --body: 'Inter', system-ui, sans-serif;
@@ -140,7 +141,7 @@
     }
 
     .logo img {
-      height: 50px;
+      height: 40px;
       width: auto;
       display: block;
       transition: transform var(--transition);
@@ -180,18 +181,20 @@
 
     .nav-cta {
       margin-left: 12px;
-      background: var(--primary);
+      background: var(--gradient);
       color: var(--white) !important;
       padding: 9px 22px !important;
       border-radius: 100px;
       font-weight: 700 !important;
       font-size: 14px !important;
-      transition: background var(--transition), transform var(--transition) !important;
+      transition: all var(--transition) !important;
+      background-size: 100% 100%;
     }
 
     .nav-cta:hover {
-      background: var(--primary-dk) !important;
       transform: translateY(-1px);
+      filter: brightness(1.1);
+      box-shadow: 0 4px 12px rgba(37, 59, 128, 0.2);
     }
 
     /* Mobile nav toggle */
@@ -338,8 +341,8 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--white);
-      color: var(--primary);
+      background: var(--gradient);
+      color: var(--white);
       font-family: var(--headline);
       font-size: 15px;
       font-weight: 700;
@@ -349,13 +352,13 @@
       border: none;
       cursor: pointer;
       transition: all var(--transition);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.4);
-      background: var(--neutral);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(126, 215, 245, 0.3);
+      filter: brightness(1.1);
     }
 
     .btn-primary:focus-visible {
@@ -500,12 +503,13 @@
     .proof-icon {
       width: 38px;
       height: 38px;
-      background: var(--primary);
+      background: var(--gradient);
       border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(37, 59, 128, 0.15);
     }
 
     .proof-icon svg {
@@ -1506,8 +1510,8 @@
       left: 0;
       right: 0;
       z-index: 200;
-      background: var(--gray-900);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: #4FC4F1;
+      border-top: 1px solid rgba(0, 30, 92, 0.1);
       padding: 20px 40px;
       display: flex;
       align-items: center;
@@ -1523,13 +1527,14 @@
 
     .cookie-banner p {
       font-size: 13px;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--navy);
       max-width: 680px;
       line-height: 1.6;
+      font-weight: 500;
     }
 
     .cookie-banner p a {
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--primary);
       text-decoration: underline;
     }
 
@@ -1559,12 +1564,12 @@
     .btn-decline {
       font-family: var(--headline);
       background: transparent;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(0, 30, 92, 0.6);
       font-size: 13px;
       font-weight: 600;
       padding: 9px 16px;
       border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(0, 30, 92, 0.2);
       cursor: pointer;
       transition: border-color var(--transition), color var(--transition);
     }
@@ -1814,7 +1819,7 @@
   <header id="site-header">
     <div class="nav-inner">
       <a class="logo" href="/" aria-label="Pressio Spine home">
-        <img src="public/img/Brand/PressioSpineLogoBlue.png" alt="Pressio Spine Logo" />
+        <img src="public/img/Brand/PressioSpineLogoMagenta.png" alt="Pressio Spine Logo" />
       </a>
 
       <nav id="main-nav" role="navigation" aria-label="Main navigation">
