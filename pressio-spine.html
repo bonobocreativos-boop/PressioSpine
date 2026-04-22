@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Pressio Spine — Nitinol-based continuous compression spinal fixation for anterior cervical fusion. FDA 510(k) cleared. Built for the ASC era." />
+  <meta property="og:title" content="Pressio Spine | Nitinol-Based Spinal Fixation" />
+  <meta property="og:description"
+    content="A nitinol fixation platform designed to support fusion biology, simplify procedural workflow, and fit the ambulatory surgery center model." />
+  <meta property="og:type" content="website" />
+  <title>Pressio Spine | Nitinol-Based Spinal Fixation</title>
+
+  <!-- Schema.org MedicalOrganization structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Pressio Spine",
+  "description": "Nitinol-based continuous compression spinal fixation, built for the ASC era.",
+  "medicalSpecialty": "Orthopedic",
+  "url": "https://pressiospine.com"
+}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Visual System — Pressio Spine */
+      --primary: #0047AB;
+      /* Primary */
+      --primary-dk: #002F7A;
+      /* Primary dark (hover states) */
+      --secondary: #7ED7F5;
+      /* Secondary */
+      --secondary-dk: #3BB8E8;
+      --tertiary: #546E7A;
+      /* Tertiary */
+      --tertiary-lt: #7B96A1;
+      --neutral: #F5F7FA;
+      /* Neutral background */
+      --white: #FFFFFF;
+      --navy: #001E5C;
+      /* Deep navy for hero/dark areas */
+      --gray-100: #E8ECF0;
+      --gray-200: #CDD4DB;
+      --gray-300: #B0BAC4;
+      --gray-500: #6E7C87;
+      --gray-700: #3D4F5C;
+      --gray-900: #1A252F;
+      --radius-sm: 4px;
+      --radius: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0, 71, 171, 0.07), 0 1px 2px rgba(0, 71, 171, 0.04);
+      --shadow: 0 4px 16px rgba(0, 71, 171, 0.10), 0 1px 4px rgba(0, 71, 171, 0.06);
+      --shadow-lg: 0 12px 40px rgba(0, 71, 171, 0.13), 0 2px 8px rgba(0, 71, 171, 0.07);
+      --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+      --headline: 'Manrope', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── SKIP LINK (Accessibility) ─── */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      z-index: 9999;
+      transition: top var(--transition);
+    }
+
+    .skip-link:focus {
+      top: 8px;
+    }
+
+    /* ─── HEADER / NAV ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: box-shadow var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+      transition: transform var(--transition);
+    }
+
+    .logo:hover img {
+      transform: scale(1.02);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    nav a {
+      font-family: var(--headline);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-700);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: var(--neutral);
+    }
+
+    nav a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .nav-cta {
+      margin-left: 12px;
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 9px 22px !important;
+      border-radius: 100px;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dk) !important;
+      transform: translateY(-1px);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    .nav-toggle:focus-visible {
+      outline: 2px solid var(--primary);
+      border-radius: 4px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    /* Video background */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Premium overlay with multi-layered gradient for depth and readability */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(105deg,
+          rgba(0, 30, 92, 0.92) 0%,
+          rgba(0, 30, 92, 0.75) 40%,
+          rgba(0, 71, 171, 0.30) 100%);
+    }
+
+    .hero-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(126, 215, 245, 0.15);
+      border: 1px solid rgba(126, 215, 245, 0.35);
+      color: var(--secondary);
+      font-family: var(--headline);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--secondary);
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--headline);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-family: var(--body);
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.80);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--primary);
+      font-family: var(--headline);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.4);
+      background: var(--neutral);
+    }
+
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .btn-primary svg {
+      transition: transform var(--transition);
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--headline);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-ghost:focus-visible {
+      outline: 2px solid var(--white);
+      outline-offset: 3px;
+    }
+
+    /* Hero visual panel */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mechanism-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .mechanism-card-label {
+      font-family: var(--headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .mechanism-card h3 {
+      font-family: var(--headline);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .mechanism-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(126, 215, 245, 0.18);
+      border: 1px solid rgba(126, 215, 245, 0.4);
+      color: var(--secondary);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+    }
+
+    .step-text strong {
+      color: rgba(255, 255, 255, 0.96);
+      font-weight: 600;
+      display: block;
+    }
+
+    /* ─── PROOF BAR ─── */
+    .proof-bar {
+      background: var(--neutral);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .proof-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 24px;
+      border-right: 1px solid var(--gray-200);
+    }
+
+    .proof-item:last-child {
+      border-right: none;
+    }
+
+    .proof-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .proof-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .proof-text strong {
+      display: block;
+      font-family: var(--headline);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    .proof-text span {
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+
+    /* ─── SECTION COMMONS ─── */
+    section {
+      padding: 96px 40px;
+    }
+
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--headline);
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--gray-900);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-family: var(--body);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ─── WHY PRESSIO ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary-dk));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gray-200);
+    }
+
+    .why-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      padding: 0;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #F1F5F9;
+      display: block;
+    }
+
+    .why-card-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-card h3 {
+      font-family: var(--headline);
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+    }
+
+    .why-card p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .why-card a {
+      font-family: var(--headline);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+
+    .why-card a:hover {
+      gap: 10px;
+    }
+
+    .why-card a:focus-visible {
+      outline: 2px solid var(--primary);
+      border-radius: 2px;
+    }
+
+    /* ─── PRODUCTS ─── */
+    .products-section {
+      background: var(--neutral);
+    }
+
+    .portfolio-bucket {
+      margin-bottom: 56px;
+    }
+
+    .portfolio-bucket:last-child {
+      margin-bottom: 0;
+    }
+
+    .bucket-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .bucket-label {
+      font-family: var(--headline);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .bucket-label.available {
+      background: #DBEAFE;
+      color: var(--primary);
+    }
+
+    .bucket-label.pipeline {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .bucket-hr {
+      flex: 1;
+      height: 1px;
+      background: var(--gray-200);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .product-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+    }
+
+    .product-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: var(--neutral);
+    }
+
+    .product-card-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .status-cleared {
+      background: #DBEAFE;
+      color: var(--primary);
+    }
+
+    .status-pipeline {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .status-not-sale {
+      background: var(--neutral);
+      color: var(--gray-500);
+      border: 1px solid var(--gray-200);
+    }
+
+    .product-card h3 {
+      font-family: var(--headline);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    .product-card-link {
+      font-family: var(--headline);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+
+    .product-card-link:hover {
+      gap: 10px;
+    }
+
+    .product-card-link:focus-visible {
+      outline: 2px solid var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Pipeline cards (no image) */
+    .pipeline-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-top: 3px solid var(--gray-300);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pipeline-card h4 {
+      font-family: var(--headline);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--tertiary);
+      margin-bottom: 8px;
+    }
+
+    .pipeline-card p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 14px;
+    }
+
+    .pipeline-stage {
+      font-family: var(--headline);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-500);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ─── CLINICAL EVIDENCE ─── */
+    .evidence-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    /* The same layered gradient that was the hero bg, now applied here */
+    .evidence-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 90% at 70% 50%, rgba(0, 71, 171, 0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(126, 215, 245, 0.08) 0%, transparent 60%),
+        linear-gradient(135deg, #001E5C 0%, #002F7A 55%, #0047AB 100%);
+    }
+
+    /* Subtle grid overlay (same as former hero) */
+    .evidence-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .evidence-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .evidence-left .section-title {
+      color: var(--white);
+    }
+
+    .evidence-left .section-sub {
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 100%;
+    }
+
+    .evidence-disclaimer {
+      margin-top: 24px;
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.6;
+    }
+
+    .btn-evidence {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      background: var(--white);
+      color: var(--primary);
+      font-family: var(--headline);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-evidence:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-evidence:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .evidence-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .evidence-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .evidence-tag {
+      font-family: var(--headline);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .evidence-stat {
+      font-family: var(--headline);
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .evidence-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .evidence-qual {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.38);
+      font-style: italic;
+    }
+
+    /* ─── ASC SECTION ─── */
+    /* ─── BUILT FOR THE ASC ERA ─── */
+    .asc-section {
+      background: #F8FAFC;
+    }
+
+    .asc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .asc-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .asc-card .title {
+      font-family: var(--headline);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .model-group {
+      margin-bottom: 20px;
+    }
+
+    .model-label {
+      font-family: var(--headline);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gray-300);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .model-val {
+      font-family: var(--body);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-700);
+    }
+
+    .pressio-group .model-label {
+      color: var(--primary);
+    }
+
+    .pressio-group .model-val {
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .asc-card hr {
+      border: none;
+      border-top: 1px dashed var(--gray-100);
+      margin: 20px 0;
+    }
+
+    .net-impact-box {
+      margin-top: auto;
+      background: #003380;
+      border-radius: var(--radius-sm);
+      padding: 14px 10px;
+      color: var(--white);
+    }
+
+    .impact-label {
+      display: block;
+      font-family: var(--headline);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      opacity: 0.8;
+    }
+
+    .impact-val {
+      display: block;
+      font-family: var(--headline);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    /* Bottom 2 cards centering */
+    .asc-grid-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .asc-grid-bottom .asc-card {
+      width: clamp(300px, 100%, 410px);
+      flex-shrink: 0;
+    }
+
+    /* ASC Nav Links */
+    .asc-footer-nav {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--gray-100);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .asc-footer-nav a {
+      font-family: var(--headline);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      transition: color var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .asc-footer-nav a:hover {
+      color: var(--primary);
+    }
+
+    .asc-nav-sep {
+      width: 1px;
+      height: 18px;
+      background: var(--gray-200);
+    }
+
+    @media (max-width: 1024px) {
+      .asc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .asc-grid-bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .asc-grid,
+      .asc-grid-bottom {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .asc-footer-nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .asc-nav-sep {
+        display: none;
+      }
+    }
+
+
+    /* ─── LEADERSHIP ─── */
+    .leadership-section {
+      background: var(--neutral);
+    }
+
+    .leadership-section .section-sub {
+      margin-bottom: 52px;
+    }
+
+    .leadership-note {
+      display: inline-block;
+      margin-bottom: 40px;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      font-size: 13px;
+      color: #92400E;
+      line-height: 1.5;
+    }
+
+    .leadership-note strong {
+      font-weight: 600;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      text-align: center;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .team-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 16px;
+      display: block;
+      border: 3px solid var(--gray-100);
+      background: var(--neutral);
+    }
+
+    .team-avatar-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: var(--neutral);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--gray-100);
+    }
+
+    .team-avatar-placeholder svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--gray-300);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .team-card h5 {
+      font-family: var(--headline);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .team-card .role {
+      font-family: var(--headline);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--tertiary);
+      margin-bottom: 10px;
+    }
+
+    .team-card p {
+      font-size: 12px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    .consent-pending {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--gray-500);
+      background: var(--neutral);
+      border: 1px solid var(--gray-100);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-top: 8px;
+    }
+
+    /* ─── NEWS ─── */
+    .news-section {
+      background: var(--white);
+    }
+
+    .news-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 44px;
+    }
+
+    .news-header a {
+      font-family: var(--headline);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+
+    .news-header a:hover {
+      gap: 10px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .news-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .news-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: var(--neutral);
+    }
+
+    .news-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-date {
+      font-family: var(--headline);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--tertiary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .news-body h4 {
+      font-family: var(--headline);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      flex: 1;
+    }
+
+    .news-body p {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ─── REGULATORY DISCLAIMER ─── */
+    .reg-bar {
+      background: #FEF3C7;
+      border-top: 1px solid #FDE68A;
+      padding: 16px 40px;
+      text-align: center;
+    }
+
+    .reg-bar p {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-size: 12px;
+      color: #78350F;
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--gray-900);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 40px 48px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-brand .logo-footer {
+      display: inline-block;
+      text-decoration: none;
+      margin-bottom: 4px;
+    }
+
+    .logo-footer img {
+      height: 50px;
+      width: auto;
+      display: block;
+      opacity: 0.9;
+      transition: opacity var(--transition);
+    }
+
+    .logo-footer:hover img {
+      opacity: 1;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      margin: 16px 0 24px;
+      max-width: 260px;
+    }
+
+    .footer-fda {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      line-height: 1.6;
+    }
+
+    .footer-col h6 {
+      font-family: var(--headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-col a:focus-visible {
+      outline: 1px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.35);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-bottom-links a:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--gray-900);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      transform: translateY(0);
+      transition: transform var(--transition);
+    }
+
+    .cookie-banner.hidden {
+      transform: translateY(100%);
+    }
+
+    .cookie-banner p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    .cookie-banner p a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: underline;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn-accept {
+      font-family: var(--headline);
+      background: var(--primary);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .btn-accept:hover {
+      background: var(--primary-dk);
+    }
+
+    .btn-decline {
+      font-family: var(--headline);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    .btn-decline:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .proof-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .proof-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .evidence-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 64px 24px;
+      }
+
+      .nav-inner {
+        padding: 0 24px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--white);
+        padding: 24px;
+        border-top: 1px solid var(--gray-100);
+        z-index: 99;
+      }
+
+      nav.open a {
+        padding: 14px 16px;
+        font-size: 16px;
+        border-radius: var(--radius);
+      }
+
+      nav.open .nav-cta {
+        margin-left: 0;
+        margin-top: 12px;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 60px 24px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .proof-inner {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+      }
+
+      .proof-item {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .proof-item:last-child {
+        border-bottom: none;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .asc-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 48px 24px 36px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 20px 24px;
+      }
+
+      .footer-bottom-links {
+        justify-content: center;
+      }
+
+      .cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+      }
+
+      .reg-bar {
+        padding: 14px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        justify-content: center;
+      }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .fade-in:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+
+      .fade-in:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+
+      .fade-in:nth-child(4) {
+        transition-delay: 0.3s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Accessibility: skip to main -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ─── COOKIE CONSENT BANNER (GDPR/CCPA) ─── -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+    <p>
+      We use cookies to understand how healthcare professionals and partners interact with our site. No personal health
+      information is collected.
+      See our <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a> for details.
+    </p>
+    <div class="cookie-actions">
+      <button class="btn-decline" id="cookieDecline">Decline Optional</button>
+      <button class="btn-accept" id="cookieAccept">Accept All</button>
+    </div>
+  </div>
+
+  <!-- ─── HEADER ─── -->
+  <header id="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="/" aria-label="Pressio Spine home">
+        <img src="public/img/Brand/PressioSpineLogoBlue.png" alt="Pressio Spine Logo" />
+      </a>
+
+      <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="/products">Products</a>
+        <a href="/clinical-evidence">Clinical Evidence</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/company">Company</a>
+        <a href="/news">News</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav"
+        aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"
+          aria-hidden="true">
+          <line x1="3" y1="6" x2="19" y2="6" id="bar1" />
+          <line x1="3" y1="11" x2="19" y2="11" id="bar2" />
+          <line x1="3" y1="16" x2="19" y2="16" id="bar3" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" aria-label="Hero">
+      <!-- Hero video background -->
+      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="https://res.cloudinary.com/dvm7fjhxs/video/upload/v1776828558/Hero_Video_gvfgli.mp4" type="video/mp4" />
+      </video>
+      <!-- Overlay keeps text readable with a premium deep navy glassmorphism feel -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge" aria-label="FDA 510(k) Cleared">FDA 510(k) Cleared</div>
+          <h1>Nitinol-Based Continuous Compression for Anterior Cervical Fusion</h1>
+          <p class="hero-sub">
+            Pressio Spine is advancing a nitinol fixation platform designed to support fusion biology, simplify
+            procedural workflow, and fit the ambulatory surgery center model across cervical and future spine
+            applications.
+          </p>
+          <div class="hero-actions">
+            <a href="/products" class="btn-primary">
+              View Products
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+            <a href="/clinical-evidence" class="btn-ghost">View Clinical Evidence</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── PROOF BAR ─── -->
+    <div class="proof-bar" role="complementary" aria-label="Key product facts">
+      <div class="proof-inner">
+        <div class="proof-item">
+          <div class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <div class="proof-text">
+            <strong>FDA 510(k) Cleared</strong>
+            <span>Anterior Cervical Fixation</span>
+          </div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <div class="proof-text">
+            <strong>Nitinol Continuous Compression</strong>
+            <span>Shape memory fixation design</span>
+          </div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M8 2v4M16 2v4M2 10h20" />
+            </svg>
+          </div>
+          <div class="proof-text">
+            <strong>Single-Use Sterile Kit</strong>
+            <span>Workflow-optimized for ASCs</span>
+          </div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 3v18h18" />
+              <path d="M7 16l4-4 4 4 5-5" />
+            </svg>
+          </div>
+          <div class="proof-text">
+            <strong>Platform Expansion Underway</strong>
+            <span>Cervical today. Broader spine in development.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section aria-labelledby="why-heading">
+      <div class="section-inner">
+        <h2 class="section-title" id="why-heading">Precision Engineering</h2>
+        <p class="section-sub">Reimagining spinal fixation through the unique properties of shape memory alloys.</p>
+
+        <div class="why-grid">
+          <!-- CARD 1 -->
+          <div class="why-card fade-in">
+            <img class="why-card-img" src="public/product/Product%20Images/Procedure-04.jpg" alt="Clinical Mechanism spine render" />
+            <div class="why-card-body">
+              <h3>Clinical Mechanism</h3>
+              <p>Harnessing nitinol's superelastic properties for continuous dynamic compression, optimized for long-term fusion biology.</p>
+              <a href="/clinical-evidence">
+                Clinical Evidence
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="why-card fade-in">
+            <img class="why-card-img" src="public/product/Product%20Images/Product%20Images-02.png" alt="Workflow Simplicity kit render" />
+            <div class="why-card-body">
+              <h3>Workflow Simplicity</h3>
+              <p>Reduced tray burden with single-use sterile instrumentation, specifically engineered for the ASC economic model.</p>
+              <a href="/solutions">
+                Solution Overview
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="why-card fade-in">
+            <img class="why-card-img" src="public/product/Product%20Images/Product%20Images-03.png" alt="Platform Potential abstract orb" />
+            <div class="why-card-body">
+              <h3>Platform Potential</h3>
+              <p>Our cervical technology is the foundation for a broader nitinol-based spinal fixation platform currently in development.</p>
+              <a href="/products">
+                Roadmap
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRODUCTS ─── -->
+    <section class="products-section" aria-labelledby="products-heading">
+      <div class="section-inner">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title" id="products-heading">Products</h2>
+
+        <!-- Available Now bucket -->
+        <div class="portfolio-bucket">
+          <div class="bucket-header">
+            <span class="bucket-label available">Available Now — FDA Cleared &amp; Commercially Distributed</span>
+            <div class="bucket-hr" aria-hidden="true"></div>
+          </div>
+
+          <div class="products-grid">
+            <article class="product-card">
+              <img class="product-card-img"
+                src="public/product/Product%20Images/Product%20Images-01.png"
+                alt="CONTINUUM ACDF Nitinol Fixation System — close-up of nitinol staple device" loading="lazy" />
+              <div class="product-card-body">
+                <span class="product-status status-cleared">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M2 5l2 2 4-4" />
+                  </svg>
+                  FDA 510(k) Cleared — Available for Distribution
+                </span>
+                <h3>CONTINUUM ACDF Nitinol Fixation System — FDA 510(k) Cleared</h3>
+                <p>An anterior cervical fixation system utilizing nitinol shape memory alloy staples to deliver
+                  continuous compressive force at the interbody space, intended to support fusion biology in ACDF
+                  procedures.</p>
+                <a href="/products/continuum" class="product-card-link">
+                  Technical Specifications &amp; IFU
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M2 7h10M8 3l4 4-4 4" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <img class="product-card-img"
+                src="public/product/Product%20Images/Product%20Images-02.png"
+                alt="TIDAL Cervical Interbody sterile instrument kit packaging" loading="lazy" />
+              <div class="product-card-body">
+                <span class="product-status status-cleared">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M2 5l2 2 4-4" />
+                  </svg>
+                  FDA Cleared — Available for Distribution
+                </span>
+                <h3>TIDAL Cervical Interbody Products</h3>
+                <p>A cervical interbody portfolio distributed by Pressio Spine. Complete procedural set in a single-use
+                  sterile format, compatible with standard ACDF workflows. Pressio-branded surgical technique materials
+                  available upon request.</p>
+                <a href="/products/tidal" class="product-card-link">
+                  Product Details &amp; Downloads
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M2 7h10M8 3l4 4-4 4" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- In Development bucket -->
+        <div class="portfolio-bucket">
+          <div class="bucket-header">
+            <span class="bucket-label pipeline">In Development — Not Available for Sale</span>
+            <div class="bucket-hr" aria-hidden="true"></div>
+          </div>
+
+          <p style="font-size:13px; color:var(--gray-500); margin-bottom:24px; max-width:660px; line-height:1.7;">
+            The following products are in active development and have not received FDA clearance. They are not available
+            for commercial sale. No performance claims are made for pre-market products.
+          </p>
+
+          <div class="pipeline-grid">
+            <div class="pipeline-card">
+              <span class="product-status status-not-sale" style="margin-bottom:14px;">In Development — Not Available
+                for Sale</span>
+              <h4>CONTINUUM 2.0</h4>
+              <p>Next-generation nitinol cervical fixation with an enhanced mechanism profile and expanded sizing
+                matrix.</p>
+              <span class="pipeline-stage">Pre-clinical Development</span>
+            </div>
+
+            <div class="pipeline-card">
+              <span class="product-status status-not-sale" style="margin-bottom:14px;">In Development — Not Available
+                for Sale</span>
+              <h4>Cervical Nitinol Plate</h4>
+              <p>An anterior cervical plate integrating nitinol compression elements as a standalone fixation construct.
+              </p>
+              <span class="pipeline-stage">Design Phase</span>
+            </div>
+
+            <div class="pipeline-card">
+              <span class="product-status status-not-sale" style="margin-bottom:14px;">In Development — Not Available
+                for Sale</span>
+              <h4>Lateral / Lumbar Fixation System</h4>
+              <p>Extending the nitinol continuous compression principle to lateral and lumbar fixation approaches.</p>
+              <span class="pipeline-stage">Early Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CLINICAL EVIDENCE ─── -->
+    <section class="evidence-section" aria-labelledby="evidence-heading">
+      <div class="evidence-inner">
+        <div class="evidence-left">
+          <span class="section-label" style="color:var(--secondary);">Clinical Rationale</span>
+          <h2 class="section-title" id="evidence-heading">Evidence-Based Fixation</h2>
+          <p class="section-sub">
+            Explore the clinical and technical rationale behind Pressio's continuous compression approach, including
+            study results, imaging, technique materials, and supporting evidence. All data presented with full study
+            qualification.
+          </p>
+          <div class="evidence-disclaimer">
+            <strong>Data qualification note:</strong> All clinical data presented on this site includes study design,
+            sample size, and applicable limitations. No claim is made beyond the scope of the cited evidence. Pipeline
+            product performance data is not presented publicly.
+          </div>
+          <a href="/clinical-evidence" class="btn-evidence">
+            View All Clinical Evidence
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="evidence-cards">
+          <div class="evidence-card">
+            <div class="evidence-tag">Key Performance Metric</div>
+            <div class="evidence-stat">98%</div>
+            <p class="evidence-desc">Fusion rate observed in an initial retrospective cohort study of CONTINUUM-treated
+              anterior cervical procedures at 12-month follow-up.</p>
+            <div class="evidence-qual">Retrospective study; n=120; CT-confirmed radiographic fusion; single-center; data
+              on file. Independent radiologist read. Results may not generalize to all patient populations.</div>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-tag">Workflow Analysis</div>
+            <div class="evidence-stat">40%</div>
+            <p class="evidence-desc">Reduction in OR set-up time measured in a comparative workflow analysis using the
+              single-use sterile kit format versus reusable tray systems.</p>
+            <div class="evidence-qual">Comparative workflow analysis; n=45; OR time measured from kit opening to
+              field-ready; results are site-specific and may vary.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BUILT FOR THE ASC ERA ─── -->
+    <section class="asc-section" aria-labelledby="asc-heading">
+      <div class="section-inner">
+        <div style="text-align:center; max-width:580px; margin:0 auto 0;">
+          <span class="section-label">Site of Care</span>
+          <h2 class="section-title" id="asc-heading">Built for the ASC Era</h2>
+          <p class="section-sub" style="margin:0 auto;">The CONTINUUM System and single-use sterile kit are designed for
+            the operational and economic realities of ambulatory spine surgery.</p>
+        </div>
+
+        <div class="asc-grid">
+          <!-- OR TIME -->
+          <div class="asc-card fade-in">
+            <div class="title">OR Time</div>
+            <div class="model-group">
+              <span class="model-label">Traditional Model</span>
+              <span class="model-val">15—25 min instrument count</span>
+            </div>
+            <hr />
+            <div class="model-group pressio-group">
+              <span class="model-label">Pressio Continuum</span>
+              <span class="model-val">Open and insert</span>
+            </div>
+            <div class="net-impact-box">
+              <span class="impact-label">Net Impact</span>
+              <span class="impact-val">20–30 min saved/case</span>
+            </div>
+          </div>
+
+          <!-- INSTRUMENT TRAYS -->
+          <div class="asc-card fade-in">
+            <div class="title">Instrument Trays</div>
+            <div class="model-group">
+              <span class="model-label">Traditional Model</span>
+              <span class="model-val">3—4 multi-tray sets</span>
+            </div>
+            <hr />
+            <div class="model-group pressio-group">
+              <span class="model-label">Pressio Continuum</span>
+              <span class="model-val">Single-use sterile kit</span>
+            </div>
+            <div class="net-impact-box">
+              <span class="impact-label">Net Impact</span>
+              <span class="impact-val">100% tray elimination</span>
+            </div>
+          </div>
+
+          <!-- STERILIZATION -->
+          <div class="asc-card fade-in">
+            <div class="title">Sterilization</div>
+            <div class="model-group">
+              <span class="model-label">Traditional Model</span>
+              <span class="model-val">On-site reprocessing</span>
+            </div>
+            <hr />
+            <div class="model-group pressio-group">
+              <span class="model-label">Pressio Continuum</span>
+              <span class="model-val">Pre-sterilized, no storage</span>
+            </div>
+            <div class="net-impact-box">
+              <span class="impact-label">Net Impact</span>
+              <span class="impact-val">$300-600+ saved/case</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="asc-grid-bottom">
+          <!-- REP / LOGISTICS -->
+          <div class="asc-card fade-in">
+            <div class="title">Rep / Logistics</div>
+            <div class="model-group">
+              <span class="model-label">Traditional Model</span>
+              <span class="model-val">Rep coordination/case</span>
+            </div>
+            <hr />
+            <div class="model-group pressio-group">
+              <span class="model-label">Pressio Continuum</span>
+              <span class="model-val">Kit ships direct to site</span>
+            </div>
+            <div class="net-impact-box">
+              <span class="impact-label">Net Impact</span>
+              <span class="impact-val">Rep-independent</span>
+            </div>
+          </div>
+
+          <!-- SHIPPING -->
+          <div class="asc-card fade-in">
+            <div class="title">Shipping</div>
+            <div class="model-group">
+              <span class="model-label">Traditional Model</span>
+              <span class="model-val">$200—300 logistics/case</span>
+            </div>
+            <hr />
+            <div class="model-group pressio-group">
+              <span class="model-label">Pressio Continuum</span>
+              <span class="model-val">FedEx direct, no consignment</span>
+            </div>
+            <div class="net-impact-box">
+              <span class="impact-label">Net Impact</span>
+              <span class="impact-val">Near-zero inventory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="asc-footer-nav">
+          <a href="/sales-channel">Sales Channel</a>
+          <div class="asc-nav-sep" aria-hidden="true"></div>
+          <a href="/solutions/asc">Hospital / ASC</a>
+          <div class="asc-nav-sep" aria-hidden="true"></div>
+          <a href="/solutions/surgeons">Surgeon</a>
+          <div class="asc-nav-sep" aria-hidden="true"></div>
+          <a href="/company">Strategic Acquirer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── LEADERSHIP ─── -->
+    <section class="leadership-section" aria-labelledby="leadership-heading">
+      <div class="section-inner">
+        <span class="section-label">Company</span>
+        <h2 class="section-title" id="leadership-heading">Built by Spine, Orthopedic, and Commercial Operators</h2>
+        <p class="section-sub">Pressio Spine is led by operators with direct experience across spine device development,
+          commercialization, and ASC market entry.</p>
+
+        <div class="leadership-note" role="note">
+          <strong>⚠ Content under review:</strong> Leadership, board, and SAB profiles are being updated to reflect the
+          current team. SAB member names and photographs require written consent prior to public display. Full team
+          profiles will be published following completion of the consent process.
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h5>Board Member</h5>
+            <div class="role">Executive Advisory</div>
+            <p>Extensive leadership experience across spine medical device development and commercial operations.</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h5>SAB Member</h5>
+            <div class="role">Spinal Surgeon, MD</div>
+            <p>Fellowship-trained spine surgeon with subspecialty focus in minimally invasive cervical procedures.</p>
+            <span class="consent-pending">Consent pending — name withheld</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h5>SAB Member</h5>
+            <div class="role">Neurosurgeon, PhD</div>
+            <p>Research focus on bone morphogenetic pathways and the biological basis of continuous compression fusion.
+            </p>
+            <span class="consent-pending">Consent pending — name withheld</span>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h5>Board Member</h5>
+            <div class="role">Strategic Director</div>
+            <p>Deep domain expertise in ASC commercialization strategy and spine medical device market development.</p>
+            <span class="consent-pending">Consent pending — name withheld</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── LATEST NEWS ─── -->
+    <section class="news-section" aria-labelledby="news-heading">
+      <div class="section-inner">
+        <div class="news-header">
+          <div>
+            <span class="section-label">Newsroom</span>
+            <h2 class="section-title" id="news-heading">Latest News</h2>
+          </div>
+          <a href="/news">
+            All Press Releases
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card">
+            <img class="news-img"
+              src="https://images.unsplash.com/photo-1507679799987-c7377bc56526?auto=format&fit=crop&q=80&w=800"
+              alt="Business strategy and funding" loading="lazy" aria-hidden="true" />
+            <div class="news-body">
+              <div class="news-date">Oct 12, 2024</div>
+              <h4>Pressio Spine Completes Series B Funding to Accelerate Platform Growth</h4>
+              <p>The $30M round will drive commercialization of the CONTINUUM nitinol cervical fixation system and
+                expand R&amp;D for lumbar applications.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img class="news-img"
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
+              alt="Modern hospital environment" loading="lazy" aria-hidden="true" />
+            <div class="news-body">
+              <div class="news-date">Sep 28, 2024</div>
+              <h4>1,000th Procedure Completed with CONTINUUM Nitinol Fixation System</h4>
+              <p>Milestone demonstrates commercial adoption among orthopedic and neurological spine surgeons across
+                North America since commercial launch.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img class="news-img"
+              src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800"
+              alt="Medical research and science" loading="lazy" aria-hidden="true" />
+            <div class="news-body">
+              <div class="news-date">Aug 15, 2024</div>
+              <h4>Study Published in <em>The Spine Journal</em> Validates Continuous Compression in ACDF</h4>
+              <p>Data demonstrates improvements in radiographic fusion outcomes versus static plating constructs. Full
+                study qualification available on the Clinical Evidence page.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── REGULATORY DISCLAIMER BAR ─── -->
+  <div class="reg-bar" role="note">
+    <p>
+      <strong>Regulatory notice:</strong> Pipeline products shown on this site are In Development and have not received
+      FDA clearance. They are not available for commercial sale. Clinical data presented on this site is provided with
+      full study qualification, including design, sample size, and applicable limitations. For complete prescribing and
+      indication information, refer to the applicable Instructions for Use (IFU). Rx only. For use by trained healthcare
+      professionals only.
+    </p>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="logo-footer" href="/" aria-label="Pressio Spine home">
+          <img src="public/img/Brand/PressioSpineLogoWhite.png" alt="Pressio Spine Logo" />
+        </a>
+        <p>Precision nitinol-based fixation for anterior cervical fusion. Built for the ASC era.</p>
+        <div class="footer-fda">
+          CONTINUUM ACDF Nitinol Fixation System: FDA 510(k) Cleared for anterior cervical fixation. For full
+          indications, contraindications, and warnings, see product IFU.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Inquiries</h6>
+        <ul>
+          <li><a href="/contact?type=product">Request Product Information</a></li>
+          <li><a href="/contact?type=distribution">Distribution Inquiries</a></li>
+          <li><a href="/contact?type=general">Speak With Pressio</a></li>
+          <li><a href="/contact?type=media">Media Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Resources</h6>
+        <ul>
+          <li><a href="/clinical-evidence">Clinical Evidence Hub</a></li>
+          <li><a href="/products">Product Catalog</a></li>
+          <li><a href="/solutions/surgeons">For Surgeons</a></li>
+          <li><a href="/solutions/asc">For ASCs &amp; Hospitals</a></li>
+          <li><a href="/solutions/partners">For Partners</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Company</h6>
+        <ul>
+          <li><a href="/company">About Pressio Spine</a></li>
+          <li><a href="/company#leadership">Leadership &amp; SAB</a></li>
+          <li><a href="/news">News &amp; Updates</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Pressio Spine. All rights reserved. Content subject to regulatory review.</span>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookie-policy">Cookies</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll shadow
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Close nav on link click (mobile)
+    mainNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close nav on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        navToggle.focus();
+      }
+    });
+
+    // Cookie banner
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieDecline = document.getElementById('cookieDecline');
+
+    // Check if already decided
+    if (localStorage.getItem('cookie-consent')) {
+      cookieBanner.classList.add('hidden');
+    }
+
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'accepted');
+      cookieBanner.classList.add('hidden');
+      // GA4/Hotjar would fire here after consent
+    });
+
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'declined');
+      cookieBanner.classList.add('hidden');
+    });
+
+    // Intersection Observer for fade-in animations
+    if ('IntersectionObserver' in window) {
+      const fadeEls = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      fadeEls.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: show all without animation
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+
+</body>
+
+</html>
