@@ -19,21 +19,21 @@ const AUDIENCES = [
     key: "forSurgeons" as const, 
     label: "For Surgeons",  
     description: "Harness shape-memory Nitinol for continuous, dynamic compression at the fusion site.",
-    img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/v1777652069/Surgeons_o3nldt.png" 
+    img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123564/Surgeons_filajl.png" 
   },
   { 
     id: "ascs",     
     key: "forASCs"     as const, 
     label: "For ASCs",      
     description: "Transform outpatient spine surgery with zero tray burden and rep-independent workflows.",
-    img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/v1777652068/ASCs_nmgfof.png" 
+    img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123557/ASCs_rxkaip.png" 
   },
   { 
     id: "partners", 
     key: "forPartners" as const, 
     label: "For Partners",  
     description: "Partner to lead the commercial shift toward the outpatient era of spinal fixation.",
-    img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/v1777652069/Partners_l5xfjj.png" 
+    img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123563/Partners_xyle3m.png" 
   },
 ];
 

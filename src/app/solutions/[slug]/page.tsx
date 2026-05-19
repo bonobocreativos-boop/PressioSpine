@@ -24,13 +24,13 @@ const VALUE_EQUATION_DATA = [
   {
     stakeholder: "Hospital & ASC",
     icon: Building2,
-    img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/v1777652068/ASCs_nmgfof.png",
+    img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123557/ASCs_rxkaip.png",
     proposition: "Pre-sterilized / Ready-to-use. No reprocessing or tray storage delays. Save $300–$600+ per case in sterilization costs."
   },
   {
     stakeholder: "The Surgeon",
     icon: Stethoscope,
-    img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/v1777652069/Surgeons_o3nldt.png",
+    img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123564/Surgeons_filajl.png",
     proposition: "Reproducible Results. 41.19 RVU valuation with a simplified 3-step technique. Self-sufficient by case three."
   },
   {
@@ -42,7 +42,7 @@ const VALUE_EQUATION_DATA = [
   {
     stakeholder: "Strategic Acquirer",
     icon: TrendingUp,
-    img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/v1777652069/Partners_l5xfjj.png",
+    img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123563/Partners_xyle3m.png",
     proposition: "High Scalability. Simple commercial integration with near-zero capital instrument investment and high gross margins."
   }
 ];

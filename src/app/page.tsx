@@ -14,7 +14,7 @@ import { fixTerminology } from "@/lib/terminology";
 // ── Hero video – served from Cloudinary ────────────────────────────────────────
 // Update this URL in Sanity (homePage.heroVideoUrl) or change the constant below.
 const HERO_VIDEO_URL =
-  "https://res.cloudinary.com/dvm7fjhxs/video/upload/f_auto,q_auto/v1776828558/Hero_Video_gvfgli.mp4";
+  "https://res.cloudinary.com/dumskfbgj/video/upload/v1779123536/Hero_Video_tunvft.mp4";
 
 export const metadata: Metadata = {
   title: "Pressio Spine™ | Advanced Spinal Implant Solutions",
@@ -130,21 +130,21 @@ export default async function HomePage() {
                 desc: "Harnessing nitinol's superelastic properties for continuous dynamic compression, designed to support fusion.",
                 href: "/solutions/surgeons",
                 label: "More Info",
-                img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/f_auto,q_auto/v1777651397/Precision-Engineering-Clinical-Mechanism_m8nein.jpg"
+                img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123554/Precision-Engineering-Clinical-Mechanism_yr4xwg.jpg"
               },
               {
                 title: "Workflow Simplicity",
                 desc: "Reduced tray burden with single-use sterile instrumentation, specifically engineered for the ASC economic model.",
                 href: "/solutions/ascs",
                 label: "More Info",
-                img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/f_auto,q_auto/v1777651395/Precision-Engineering-WorkflowSimplicity_gatklc.jpg"
+                img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123554/Precision-Engineering-WorkflowSimplicity_twfpat.jpg"
               },
               {
                 title: "Platform Potential",
                 desc: "Our cervical technology is the foundation for a broader nitinol-based spinal fixation platform currently in development.",
                 href: "/solutions/partners",
                 label: "More Info",
-                img: "https://res.cloudinary.com/dvm7fjhxs/image/upload/f_auto,q_auto/v1777651408/Precision-Engineering-Platform-Potential_vxhga9.jpg"
+                img: "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123557/Precision-Engineering-Platform-Potential_uploph.jpg"
               }
             ].map((card, i) => (
               <div className="why-card-new" key={i}>
