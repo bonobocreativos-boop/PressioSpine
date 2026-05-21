@@ -198,6 +198,22 @@ export default async function HomePage() {
               )}
             </div>
           </div>
+
+          {/* ── In-Development Pipeline ──────────────────────────────── */}
+          {(data?.pipelineTeaser ?? []).length > 0 && (
+            <div className="portfolio-bucket-new" style={{ marginTop: "48px" }}>
+              <div className="bucket-header-new">
+                <span className="bucket-label-new pipeline">In Development — Pipeline</span>
+                <div className="bucket-hr-new" aria-hidden="true"></div>
+              </div>
+
+              <div className="pc-list">
+                {data?.pipelineTeaser?.map((product, i) => (
+                  <ProductCard key={product._id} product={product} index={(data?.productsTeaser?.length ?? 0) + i} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

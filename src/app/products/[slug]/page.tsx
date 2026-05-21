@@ -7,6 +7,7 @@ import { PRODUCT_QUERY } from "@/lib/sanity/queries";
 import { urlFor } from "@/lib/sanity/image";
 import type { Product } from "@/types/sanity";
 import { fixTerminology } from "@/lib/terminology";
+import DynamicFusionSection from "@/components/products/DynamicFusionSection";
 
 // Re-fetch from Sanity every 30 seconds
 export const revalidate = 30;
@@ -245,6 +246,43 @@ export default async function ProductDetailPage({
           </div>
         </div>
       </section>
+
+      {/* ── Dynamic Fusion (Continuum only) ──────────────────────────── */}
+      {slug.includes("continuum") && <DynamicFusionSection />}
+
+      {/* ── Built for the OR (Continuum + Tidal) ────────────────────── */}
+      {(slug.includes("continuum") || slug.includes("tidal")) && (
+        <section className="bfo-section" aria-labelledby="bfo-heading">
+          <div className="bfo-inner">
+            <div className="bfo-text-col">
+              <h2 id="bfo-heading" className="bfo-heading">
+                Built for the OR. Ready Before You Are.
+              </h2>
+              <p className="bfo-desc">
+                Every {slug.includes("continuum") ? "Continuum" : "TIDAL"} system ships as a size-specific, sterile-packed instrument kit. No loaner tray coordination. No reprocessing. No rep-dependent setup. The plate arrives in its active Nitinol state, pre-loaded and ready. Your OR runs on your schedule, not ours.
+              </p>
+            </div>
+            <div className="bfo-image-col">
+              <Image
+                src={
+                  slug.includes("continuum")
+                    ? "https://res.cloudinary.com/dumskfbgj/image/upload/v1779230391/sterile-kit_hyacos.png"
+                    : "https://res.cloudinary.com/dumskfbgj/image/upload/v1779123554/Precision-Engineering-WorkflowSimplicity_twfpat.jpg"
+                }
+                alt={
+                  slug.includes("continuum")
+                    ? "CONTINUUM™ sterile-packed single-use instrument kit"
+                    : "TIDAL™ precision engineering and workflow simplicity"
+                }
+                width={580}
+                height={400}
+                style={{ objectFit: "contain", width: "100%", height: "auto" }}
+                unoptimized
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Downloads ────────────────────────────────────────────────── */}
       <section className="pd-downloads-section" aria-labelledby="pd-downloads-heading">
